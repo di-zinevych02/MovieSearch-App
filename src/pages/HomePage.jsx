@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { fetchMovies } from "../../TmbdService";
-import MovieList from "../../components/MovieList/MovieList";
-import MovieList from "../../components/MovieList/MovieList";
+import { fetchTrendingMovies } from "../apiTmdb";
+import MovieList from "../components/MovieList/MovieList";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -13,7 +12,7 @@ export default function HomePage() {
       try {
         setIsLoading(true);
         setError(false);
-        const data = await fetchMovies();
+        const data = await fetchTrendingMovies();
         setMovies(data.results);
       } catch {
         setError(true);

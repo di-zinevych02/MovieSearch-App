@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation/Navigation";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
-// const MoviesPage = lazy(() => import("../../pages/MoviesPage"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage"));
 // const MovieDetailsPage = lazy(() => import("../../pages/MovieDetailsPage"));
 // const MovieCast = lazy(() => import("../MovieCast/MovieCast"));
 // const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews"));
@@ -17,6 +17,8 @@ export default function App() {
       <Suspense fallback={<div>Loading page...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
