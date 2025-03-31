@@ -14,28 +14,22 @@ export default function MoviesPage() {
   const query = searchParams.get("query") ?? "";
   const [searchQuery, setSearchQuery] = useState(query);
 
-  const handleSearchMovie = (event) => {
-    //зробили копію параметрів, щоб змінювати їх
-    const nextParams = new URLSearchParams(searchParams);
-  };
 
   useEffect(() => {
-    if (!query) {
-      setMovies([]);
-      return;
-    }
+          if (!searchQuery)
+        return;
     async function getMovie() {
       try {
         setIsLoading(true);
         setError(false);
-        const results = await fetchSearchMovies(query);
-        if (results.length === 0) {
+        const data = await fetchSearchMovies(searchQuery);
+        if (data.length === 0) {
           alert(
             "Sorry, there are no images matching your search query. Please try again!"
           );
           return;
         }
-        setMovies(results);
+        setMovies(data);
       } catch {
         setError(true);
         alert("Something went wrong please reload again!");
@@ -45,16 +39,34 @@ export default function MoviesPage() {
     }
     getMovie();
   }, [searchQuery]);
+  //{ setSubmitting } — функція, яку надає Formik, щоб контролювати стан відправки форми.
+  const handleSubmit = (values) => {
+    //Користувач не зможе відправити рядок, який містить лише пробіли.
+    const trimmedQuery = values.searchQuery.trim();
+    if (trimmedQuery === "") {
+      alert("Please enter a search term!");
+
+      return;
+    }
+    //зробили копію параметрів, щоб змінювати їх
+    const nextParams = new URLSearchParams(searchParams);
+    //змінили копію параметрів на значення яке ввели в поле пошуку
+    nextParams.set("query", trimmedQuery);
+    //передали копію в юрл
+        setSearchQuery(trimmedQuery);
+    setSearchParams(nextParams);
+
+  };
+
 
   return (
     <div>
-      {isLoading && <p className={css.loading}>Loading movies...</p>}
-      {error && (
-        <p className={css.texterror}>
-          Whoops there was an error, please reload the page!{" "}
-        </p>
-      )}
-      <SearchInput onSearch={handleSearchMovie} searchQuery={searchQuery} />
+      <SearchInput
+        onSearch={handleSubmit}
+        searchQuery={searchQuery}
+        isLoading={isLoading}
+        error={error}
+      />
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
