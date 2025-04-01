@@ -11,16 +11,23 @@ export default function MovieList({ movies }) {
     <ul className={css.list}>
       {movies.map((movie) => (
         <li key={movie.id}>
-          <Link
+                    <Link
             to={`/movies/${movie.id}`}
-            //використовується для збереження інформації про попередню сторінку.
-            state={{ from: location }}
+            //використовується для збереження інформації про попередню сторінку звідки прийшли
+            state={location}
           >
-            <img
+          <img
               className={css.movieImg}
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
             /> 
+            </Link>
+          <Link
+            to={`/movies/${movie.id}`}
+            //використовується для збереження інформації про попередню сторінку звідки прийшли
+            state={location}
+          >
+           
             <h3 className={css.moviename}>{movie.name ?? movie.title}</h3>                      
           </Link>
         </li>

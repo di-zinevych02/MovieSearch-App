@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router";
 import SearchInput from "../components/SearchInput/SearchInput";
-import { fetchSearchMovies } from "../apiTmdb";
+import { fetchSearchMovies } from "../APITmdb";
 import MovieList from "../components/MovieList/MovieList";
+import Loader from "../components/Loader/Loader";
+import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
@@ -18,7 +20,7 @@ export default function MoviesPage() {
   useEffect(() => {
           if (!searchQuery)
         return;
-    async function getMovie() {
+    async function getMovies() {
       try {
         setIsLoading(true);
         setError(false);
@@ -37,9 +39,10 @@ export default function MoviesPage() {
         setIsLoading(false);
       }
     }
-    getMovie();
+    getMovies();
   }, [searchQuery]);
-  //{ setSubmitting } — функція, яку надає Formik, щоб контролювати стан відправки форми.
+  
+
   const handleSubmit = (values) => {
     //Користувач не зможе відправити рядок, який містить лише пробіли.
     const trimmedQuery = values.searchQuery.trim();
@@ -52,21 +55,20 @@ export default function MoviesPage() {
     const nextParams = new URLSearchParams(searchParams);
     //змінили копію параметрів на значення яке ввели в поле пошуку
     nextParams.set("query", trimmedQuery);
-    //передали копію в юрл
-        setSearchQuery(trimmedQuery);
-    setSearchParams(nextParams);
-
+    //передали копію в юрл, щоб зберігати пошуковий запит у URL, дозволяючи змінювати сторінку і ділитися посиланням
+        setSearchParams(nextParams);
+setSearchQuery(trimmedQuery);
   };
 
 
   return (
-    <div>
+    <div>    
       <SearchInput
         onSearch={handleSubmit}
         searchQuery={searchQuery}
-        isLoading={isLoading}
-        error={error}
       />
+      {isLoading && <Loader />}
+      {error && <ErrorMessage error={error} />}
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );

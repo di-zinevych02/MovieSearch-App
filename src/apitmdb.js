@@ -23,21 +23,21 @@ export const fetchSearchMovies = async (searchQuery) => {
 
 //запит повної інформації про фільм для сторінки кінофільму.
 export const fetchMoviesDetails = async (movieId) => {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US&page=1`;
-  const response = await get.axios(url, options);
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?include_adult=false&language=en-US&page=1`;
+  const response = await axios.get(url, options);
   return response.data;
 };
 
 //запит інформації про акторський склад для сторінки кінофільму.
 export const fetchMovieCredits = async (movieId) => {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits}`;
-  const response = await get.axios(url, options);
-  return response.data;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits`;
+  const response = await axios.get(url, options);
+  return response.data.cast;
 };
 
 //запит оглядів для сторінки кінофільму
 export const fetchMovieReviews = async (movieId) => {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews}`;
-  const response = await get.axios(url, options);
-  return response.data;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews`;
+  const response = await axios.get(url, options);
+  return response.data.results;
 };

@@ -5,8 +5,6 @@ import { FaSearch } from "react-icons/fa";
 export default function SearchInput({
   onSearch,
   searchQuery,
-  isLoading,
-  error,
 }) {
   return (
     <div className={css.form}>
@@ -39,13 +37,6 @@ export default function SearchInput({
           </Form>
         )}
       </Formik>
-      {isLoading && (
-        <p className={css.loading}>Loading movies...</p>)}
-      {error && (
-        <p className={css.texterror}>
-          Whoops there was an error, please reload the page!
-        </p>
-      )}
     </div>
   );
 }

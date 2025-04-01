@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { fetchTrendingMovies } from "../apiTmdb";
+import { fetchTrendingMovies } from "../APITmdb";
 import MovieList from "../components/MovieList/MovieList";
+import Loader from "../components/Loader/Loader";
+import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -25,8 +27,8 @@ export default function HomePage() {
   return (
     <div>
       <h2>Trending today</h2>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Whoops there was an error, please reload the page.</p>}
+      {isLoading && <Loader />}
+              {error && <ErrorMessage error={error} />}
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
