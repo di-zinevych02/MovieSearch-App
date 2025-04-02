@@ -1,6 +1,101 @@
-.active {
-  color: #00ff88;
-  font-weight: 600;
 
-  padding: 5px;
+
+/* Контейнер */
+.container {
+  padding: 20px;
+  background-color: var(--primary-light);
+}
+
+/* Заголовок */
+.headtitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Список фільмів */ 
+/* / //визначає кількість колонок у гриді. */
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Елемент списку */
+.item {
+  background-color: var(--primary);
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Зображення фільму */
+.movieImg {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.movieImg:hover {
+  opacity: 0.8;
+}
+
+/* Назва фільму */
+.moviename {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-dark);
+  text-align: center;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.moviename:hover {
+  color: var(--secondary-dark);
+}
+
+/* --- Адаптивність --- */
+
+/* Планшет */
+@media (min-width: 768px) {
+  .list {
+    /* грід буде складатися з двох однаково широких колонок незалежно від розміру контейнера. */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .headtitle {
+    font-size: 28px;
+  }
+}
+
+/* Десктоп */
+@media (min-width: 1280px) {
+  .list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  .headtitle {
+    font-size: 32px;
+  }
+
+  .item {
+    padding: 15px;
+  }
+
+  .moviename {
+    font-size: 20px;
+  }
 }

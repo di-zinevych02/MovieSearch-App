@@ -16,7 +16,6 @@ export default function MovieCast() {
             try {
                 setIsLoading(true);
                 setError(false);
-            
                 const data = await fetchMovieReviews(movieId);
                 setReviews(data);
             }

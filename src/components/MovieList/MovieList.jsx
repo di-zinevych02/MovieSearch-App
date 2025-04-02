@@ -7,10 +7,11 @@ export default function MovieList({ movies }) {
   //збергігаємо об*єкт місцеположення, можливість передати поточний юрл у наступний маршут
   const location = useLocation();
   return (
-     <div className={css.container}>
+    <div className={css.container}>
+      <h2 className={css.headtitle}>Trending today</h2>
     <ul className={css.list}>
       {movies.map((movie) => (
-        <li key={movie.id}>
+        <li key={movie.id} className={css.item}>
                     <Link
             to={`/movies/${movie.id}`}
             //використовується для збереження інформації про попередню сторінку звідки прийшли
