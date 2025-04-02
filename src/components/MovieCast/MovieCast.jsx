@@ -45,7 +45,7 @@ export default function MovieCast() {
                             />
                             <p className={css.textcast}>{cast.name}
                             </p>
-                            <p className={css.textcast}>Character: {cast.character}</p>
+                            <p className={css.textcast}>Character: {cast.character || "Character unknown"}</p>
                         </li>
                     ))
                 ) : (

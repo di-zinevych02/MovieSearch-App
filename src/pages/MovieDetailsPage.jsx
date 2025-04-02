@@ -1,5 +1,5 @@
-import { useLocation, useParams, Link } from "react-router-dom";
-import { useEffect, useRef, useState} from "react";
+import { useLocation, useParams } from "react-router-dom";
+import { useEffect, useState} from "react";
 import { fetchMoviesDetails } from "../APITmdb";
 import Loader from "../components/Loader/Loader";
 import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
@@ -14,10 +14,7 @@ export default function MovieDetailsPage() {
     const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
-    const location = useLocation();
-    // для передачі збереженого значення юрл між оновленням компонента,куди прийшли. не реалініціалізується
-    const backLinkRef = useRef(location.state ?? "/movies");
-    
+   
     
     useEffect(() => {
         async function getMovie() {
@@ -39,7 +36,7 @@ export default function MovieDetailsPage() {
         <div>
             {isLoading && <Loader />}
             {error && <ErrorMessage error={error} />}
-            <Link to={backLinkRef.current}>Go Back</Link>
+            
             {movie && <MovieDetail movie={movie} />}           
         </div>
     );

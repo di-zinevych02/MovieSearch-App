@@ -1,0 +1,47 @@
+.listreview {
+    display: grid;
+    gap: 10px;
+}
+.itemreview {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--secondary-dark);
+    padding: 8px;
+    gap: 8px;
+    background-color: var(--primary);
+    border-radius: 8px;
+    
+}
+.author {
+font-size: 14px;
+font-weight: bold;
+    color: var(--text-dark);
+}
+.review {
+font-size: 14px;
+color: var(--text-dark);
+}
+@media (min-width: 768px) {
+    .author {
+            font-size: 16px;
+
+        }
+    
+        .review {
+            font-size: 16px;
+           
+    }
+}
+/* Десктоп */
+@media (min-width: 1280px) {
+.author {
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--text-dark);
+    }
+
+    .review {
+        font-size: 14px;
+        color: var(--text-dark);
+    }
+}

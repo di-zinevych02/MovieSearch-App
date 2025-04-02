@@ -6,15 +6,6 @@
   background-color: var(--primary-light);
 }
 
-/* Заголовок */
-.headtitle {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--text-dark);
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 /* Список фільмів */ 
 /* / //визначає кількість колонок у гриді. */
 .list {

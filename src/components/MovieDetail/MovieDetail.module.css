@@ -1,0 +1,164 @@
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  flex-direction: column;
+  display: flex;
+  
+  padding: 20px;
+  background-color: var(--primary-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.containermovie {
+    display: flex;
+        align-items: flex-start;
+        gap: 20px;
+}
+.containerimg {
+    display: flex;
+    margin-top: 60px;
+}
+.backbtn {
+    display: block;
+    width: 70px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background: var(--secondary-light);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.poster {
+  width: 100%;
+  width: 300px;
+  display: block;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.containerdescr {
+    display: flex;
+    flex-direction: column;
+}
+
+.titlemovie {
+  text-align: center;
+  font-size: 17px;
+  color: var(--text-dark);
+  margin-top: 10px;
+}
+
+.movielist {
+  margin-top: 10px;
+  padding: 5px;
+  background: var(--primary);
+  border-radius: 8px;
+}
+
+.titledescription {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.description {
+  font-size: 14px;
+font-weight: normal;
+  color: var(--text-dark);
+}
+
+
+.movielistlink {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--secondary-light);
+  border-radius: 10px;
+}
+
+.addinfo {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.infolist {
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.infoitem {
+  font-size: 14px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--secondary-dark);
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.link:hover,
+.active {
+  color: var(--secondary-darker);
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1000px;
+    padding: 15px;
+  }
+.containerimg {
+
+    margin-top: 80px;
+}
+.addinfo {
+    font-size: 20px;
+
+}
+
+.infoitem {
+    font-size: 19px;
+}
+  .titlemovie {
+    font-size: 20px;
+  }
+
+  .titledescription {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+    padding: 40px;
+  }
+
+.addinfo {
+    font-size: 20px;
+
+}
+
+.infoitem {
+    font-size: 19px;
+}
+  .poster {
+    width: 500px;
+  }
+
+  .titlemovie {
+    font-size: 25px;
+  }
+
+
+}

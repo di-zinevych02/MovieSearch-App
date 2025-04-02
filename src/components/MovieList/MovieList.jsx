@@ -8,7 +8,6 @@ export default function MovieList({ movies }) {
   const location = useLocation();
   return (
     <div className={css.container}>
-      <h2 className={css.headtitle}>Trending today</h2>
     <ul className={css.list}>
       {movies.map((movie) => (
         <li key={movie.id} className={css.item}>

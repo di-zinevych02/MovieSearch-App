@@ -1,0 +1,75 @@
+.container {
+    padding: 20px;
+
+    color: var(--primary-light);
+}
+
+.listcast {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.itemcast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.itemcast:hover {
+    transform: scale(1.05);
+}
+
+.imgCast {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.textcast {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.errorinfo {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 16px;
+}
+
+/* Адаптивний дизайн */
+@media (min-width: 768px) {
+    .listcast {
+        grid-template-columns: repeat(3, 1fr);
+    }
+.textcast {
+    font-size: 16px;
+
+}
+    .imgCast {
+        width: 120px;
+        height: 180px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .listcast {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .imgCast {
+        width: 140px;
+        height: 200px;
+    }
+}

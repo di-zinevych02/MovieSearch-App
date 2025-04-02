@@ -26,6 +26,14 @@ export default function HomePage() {
   }, []);
   return (
     <div>
+      
+       <h2   style={{
+    fontSize: "24px",
+    fontWeight: "bold",
+    color: "var(--text-dark)",
+    textAlign: "center",
+    marginBottom: "20px",
+      }}>Trending today</h2>
       {isLoading && <Loader />}
               {error && <ErrorMessage error={error} />}
       {movies.length > 0 && <MovieList movies={movies} />}
