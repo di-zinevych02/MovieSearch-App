@@ -12,7 +12,19 @@ export default function NotFoundPage() {
           marginBottom: "20px",
     padding:"20px",
       }}>The page not found(</p>
-      <Link to="/">Home</Link>
+      <Link to="/" style={{
+  display: "block",
+  width: "70px",
+  textAlign: "center",
+  marginBottom: "20px",
+  padding: "10px 15px",
+  background: "var(--secondary-light)",
+  color: "var(--text-dark)",
+  textDecoration: "none",
+  fontWeight: "bold",
+  borderRadius: "5px",
+  transition: "background 0.3s ease",
+}}>Home</Link>
     </div>
   );
 }
