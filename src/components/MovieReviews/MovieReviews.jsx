@@ -1,7 +1,7 @@
 import css from "./MovieReviews.module.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { fetchMovieReviews } from "../../APITmdb";
+import { fetchMovieReviews } from "../../movieService";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 

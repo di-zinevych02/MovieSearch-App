@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router";
 import SearchInput from "../components/SearchInput/SearchInput";
-import { fetchSearchMovies } from "../APITmdb";
+import { fetchSearchMovies } from "../movieService";
 import MovieList from "../components/MovieList/MovieList";
 import Loader from "../components/Loader/Loader";
 import ErrorMessage from "../components/ErrorMessage/ErrorMessage";

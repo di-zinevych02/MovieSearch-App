@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { fetchMovieCredits } from "../../APITmdb";
+import { fetchMovieCredits } from "../../movieService";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import css from "./MovieCast.module.css"

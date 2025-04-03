@@ -1,6 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useState} from "react";
-import { fetchMoviesDetails } from "../APITmdb";
+import { fetchMoviesDetails } from "../movieService";
 import Loader from "../components/Loader/Loader";
 import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 import MovieDetail from "../components/MovieDetail/MovieDetail"
