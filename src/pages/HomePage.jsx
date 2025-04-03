@@ -29,10 +29,12 @@ export default function HomePage() {
       
        <h2   style={{
     fontSize: "24px",
-    fontWeight: "bold",
+        fontWeight: "bold",
+    padding:"20px",
     color: "var(--text-dark)",
     textAlign: "center",
-    marginBottom: "20px",
+        marginBottom: "20px",
+    justifyContent:"center",
       }}>Trending today</h2>
       {isLoading && <Loader />}
               {error && <ErrorMessage error={error} />}
