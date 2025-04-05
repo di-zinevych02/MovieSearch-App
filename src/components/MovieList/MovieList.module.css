@@ -12,6 +12,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  
   padding: 0;
   margin: 0;
 }
@@ -20,6 +21,8 @@
 .item {
   background-color: var(--primary);
   border-radius: 10px;
+            justify-content: center;
+              text-align: center;
   padding: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -36,7 +39,12 @@
   object-fit: cover;
   transition: opacity 0.3s ease;
 }
+.imgmovienone {
+        color: var(--secondary-dark);
+          font-size: 500px;
 
+          
+}
 .movieImg:hover {
   opacity: 0.8;
 }
@@ -65,7 +73,12 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+.imgmovienone {
 
+  font-size: 300px;
+
+
+}
   .headtitle {
     font-size: 28px;
   }
@@ -77,7 +90,12 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
   }
+.imgmovienone {
 
+  font-size: 225px;
+
+
+}
   .headtitle {
     font-size: 32px;
   }

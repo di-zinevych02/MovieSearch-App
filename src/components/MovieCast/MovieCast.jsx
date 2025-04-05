@@ -4,6 +4,7 @@ import { fetchMovieCredits } from "../../movieService";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import css from "./MovieCast.module.css"
+import { CiImageOff } from "react-icons/ci";
 export default function MovieCast() {
     // отримуємо ID з URL
     const { movieId } = useParams();
@@ -39,10 +40,12 @@ export default function MovieCast() {
                 {casts ? (
                     casts.map((cast) => (
                         <li key={cast.id} className={css.itemcast}>
-                            <img className={css.imgCast}
+                            {cast.profile_path ? ( <img className={css.imgcast}
                                 src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
                                 alt={cast.name}
-                            />
+                            />) : (<CiImageOff className={css.imgcastnone}/>
+                                    
+                            )}
                             <p className={css.textcast}>{cast.name}
                             </p>
                             <p className={css.textcast}>Character: {cast.character || "Character unknown"}</p>

@@ -1,6 +1,6 @@
 
 import css from "./MovieList.module.css";
-
+import { CiImageOff } from "react-icons/ci";
 import {Link, useLocation } from "react-router-dom";
 
 export default function MovieList({ movies }) {
@@ -16,11 +16,13 @@ export default function MovieList({ movies }) {
             //використовується для збереження інформації про попередню сторінку звідки прийшли
             state={location}
           >
-          <img
+         {movie.poster_path ? ( <img
               className={css.movieImg}
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
-            /> 
+            />) : (<CiImageOff className={css.imgmovienone}/>
+                                                                
+                                                        )}
             </Link>
           <Link
             to={`/movies/${movie.id}`}

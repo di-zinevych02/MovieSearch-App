@@ -28,7 +28,7 @@
     font-size: 16px;
     padding: 8px;
     background-color: transparent;
-    color: var(--primary-darker);
+    color: var(--secondary-dark);
 }
 
 .input::placeholder {

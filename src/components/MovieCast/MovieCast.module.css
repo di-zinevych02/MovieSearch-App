@@ -28,14 +28,18 @@
     transform: scale(1.05);
 }
 
-.imgCast {
+.imgcast {
     width: 100px;
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
+.imgcastnone {
+    color: var(--primary-light);
+    font-size: 150px;
 
+}
 .textcast {
     font-size: 14px;
     font-weight: bold;
@@ -57,18 +61,23 @@
     font-size: 16px;
 
 }
-    .imgCast {
+    .imgcast {
         width: 120px;
         height: 180px;
     }
 }
-
+.imgcastnone {
+    font-size: 120px;
+    padding-bottom: 40px;
+}
 @media (min-width: 1280px) {
     .listcast {
         grid-template-columns: repeat(4, 1fr);
     }
-
-    .imgCast {
+.imgcastnone {
+    padding-bottom: 60px;
+}
+    .imgcast {
         width: 140px;
         height: 200px;
     }

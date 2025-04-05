@@ -3,6 +3,7 @@ import Loader from "../Loader/Loader";
 import clsx from "clsx";
 import {Suspense, useRef } from "react";
 import { Outlet, NavLink, Link, useLocation } from "react-router-dom";
+import { CiImageOff } from "react-icons/ci";
 
 const getLinkStyles = ({ isActive }) => {
     return clsx(css.link, isActive && css.active);
@@ -17,11 +18,13 @@ export default function MovieDetail({ movie }) {
             <Link to={backLinkRef.current} className={css.backbtn}>Go Back</Link>
             <div className={css.containermovie}>
             <div className={css.containerimg}>
-            <img
+            {movie.poster_path ? ( <img
                 className={css.poster}
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
-                />
+                />) : ( <CiImageOff className={css.imgmovienone}/>
+                                                    
+                                            )}
 </div>
             <div className={css.containerdescr}>
             <h2 className={css.titlemovie}>{movie.title}</h2>

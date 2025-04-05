@@ -46,7 +46,10 @@
     object-fit: cover;
     border-radius: 8px;
 }
-
+.imgmovienone {
+        color: var(--secondary-dark);
+            font-size: 200px;
+}
 .containerdescr {
     display: flex;
     flex-direction: column;
@@ -136,7 +139,9 @@
         max-width: 350px;
         height: 500px;
     }
-
+.imgmovienone {
+    font-size: 250px;
+}
     .containerdescr {
         flex: 2;
         text-align: left;
@@ -174,7 +179,9 @@
         max-width: 400px;
         height: 600px;
     }
-
+.imgmovienone {
+    font-size: 400px;
+}
     .titlemovie {
         font-size: 25px;
     }
