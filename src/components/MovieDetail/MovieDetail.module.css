@@ -1,5 +1,5 @@
 .container {
-    max-width: 800px;
+    max-width: 700px;
     margin: 20px auto;
     flex-direction: column;
     display: flex;
@@ -88,7 +88,8 @@
     padding: 15px;
     background: var(--secondary-light);
     border-radius: 10px;
-    width: 100%;
+    max-width: 800px;
+    
 }
 
 .addinfo {

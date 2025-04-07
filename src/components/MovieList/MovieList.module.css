@@ -3,7 +3,8 @@
 /* Контейнер */
 .container {
   padding: 20px;
-  background-color: var(--primary-light);
+
+
 }
 
 /* Список фільмів */ 
@@ -12,7 +13,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  
   padding: 0;
   margin: 0;
 }
@@ -21,6 +21,7 @@
 .item {
   background-color: var(--primary);
   border-radius: 10px;
+  max-width: 250px;
             justify-content: center;
               text-align: center;
   padding: 10px;
@@ -71,8 +72,11 @@
   .list {
     /* грід буде складатися з двох однаково широких колонок незалежно від розміру контейнера. */
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+gap: 20px;
   }
+    .item {
+      max-width: 300px;
+    }
 .imgmovienone {
 
   font-size: 300px;
