@@ -1,6 +1,6 @@
 
 .container{
-max-width: 800px;
+max-width: 700px;
 
     flex-direction: column;
     display: flex;
@@ -13,7 +13,6 @@ max-width: 800px;
     display: grid;
     gap: 15px;
     padding: 0;
-        
     margin: 0;
 }
 .itemreview {
@@ -22,7 +21,7 @@ max-width: 800px;
     border: 2px solid var(--secondary-dark);
     padding: 8px;
     background-color: var(--primary);
-    max-width: 200px;
+    max-width: 600px;
     border-radius: 8px;
     
 }
@@ -36,12 +35,15 @@ font-size: 14px;
 color: var(--text-dark);
 }
 @media (min-width: 768px) {
+    .container {
+            max-width: 1000px; 
+    }
     .author {
             font-size: 16px;
 
         }
                                 .itemreview{
-                    max-width: 300px;
+                    max-width: 900px;
                 }
         .review {
             font-size: 16px;
@@ -50,12 +52,18 @@ color: var(--text-dark);
 }
 /* Десктоп */
 @media (min-width: 1280px) {
+    .container {
+            max-width: 1200px;
+        }
 .author {
         font-size: 14px;
         font-weight: bold;
         color: var(--text-dark);
     }
-
+                                   .itemreview{
+                    max-width: 1000px;
+                }
+    
     .review {
         font-size: 14px;
         color: var(--text-dark);

@@ -46,9 +46,11 @@ export default function MovieCast() {
                             />) : (<CiImageOff className={css.imgcastnone}/>
                                     
                             )}
+                            <div className={css.containertextcast}>
                             <p className={css.textcast}>{cast.name}
                             </p>
                             <p className={css.textcast}>Character: {cast.character || "Character unknown"}</p>
+                        </div>
                         </li>
                     ))
                 ) : (

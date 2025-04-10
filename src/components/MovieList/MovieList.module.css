@@ -2,8 +2,7 @@
 
 /* Контейнер */
 .container {
-  padding: 20px;
-
+  padding: 10px;
 
 }
 
@@ -12,7 +11,7 @@
 .list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 30px;
   padding: 0;
   margin: 0;
 }
@@ -22,6 +21,7 @@
   background-color: var(--primary);
   border-radius: 10px;
   max-width: 250px;
+  height: 450px;
             justify-content: center;
               text-align: center;
   padding: 10px;
@@ -42,7 +42,7 @@
 }
 .imgmovienone {
         color: var(--secondary-dark);
-          font-size: 500px;
+          font-size: 200px;
 
           
 }
@@ -71,15 +71,16 @@
 @media (min-width: 768px) {
   .list {
     /* грід буде складатися з двох однаково широких колонок незалежно від розміру контейнера. */
-    grid-template-columns: repeat(2, 1fr);
-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+gap: 25px;
   }
     .item {
-      max-width: 300px;
+      max-width: 280px;
+      height: 480px;
     }
 .imgmovienone {
 
-  font-size: 300px;
+  font-size: 250px;
 
 
 }
@@ -92,14 +93,9 @@ gap: 20px;
 @media (min-width: 1280px) {
   .list {
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+
   }
-.imgmovienone {
 
-  font-size: 225px;
-
-
-}
   .headtitle {
     font-size: 32px;
   }
